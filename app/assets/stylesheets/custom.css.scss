@@ -33,6 +33,10 @@ body{
   font-size: 16px;
 }
 
+.point{
+  line-height: 50px;
+}
+
 /*Topのul*/
 .explanation_ul{
   margin-left: auto;
@@ -44,7 +48,7 @@ body{
 .explanation_text{
   font-size: 12px;
   color: rgb(140, 140, 140);
-  line-height: 20px;
+  line-height: 40px;
 }
 
 .navbar-inverse{
