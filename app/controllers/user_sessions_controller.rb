@@ -1,4 +1,6 @@
 class UserSessionsController < ApplicationController
+  before_action :require_login, only: [:show, :edit, :update, :destoy]
+
   def new
     @user = User.new
   end
@@ -14,6 +16,6 @@ end
 
   def destroy
     logout
-    redirect_to(:users, notice: 'Logged out!')
+    redirect_to root_path
   end
 end

@@ -18,7 +18,12 @@
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "ホーム", root_path %></li>
+            <% if current_user %>
+            <li><%= link_to "ログアウト", 'logout', method: :post %></li>
+            <li><%= link_to current_user.email, edit_user_path(current_user) %></li>
+            <% else %>
             <li><%= link_to "ログイン", 'login' %></li>
+            <% end %>
           </ul>
         </nav>
       </div>
