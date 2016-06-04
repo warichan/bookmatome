@@ -9,7 +9,7 @@ class UserSessionsController < ApplicationController
     if @user = login(params[:email], params[:password])
       redirect_back_or_to(user_path(@user), notice: 'ログインしました！')
     else
-      flash.now[:alert] = 'Login failed'
+      flash.now[:alert] = '※メールアドレスもしくはパスワードが違います'
       render action: 'new'
   end
 end
