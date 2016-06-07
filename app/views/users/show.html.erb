@@ -1,9 +1,14 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="category_button">
+  <%= link_to new_category_path, class: 'btn btn-default' do %>
+    カテゴリ新規作成
+  <% end %>
+</div>
+<% if @user.categories.any? %>
+#カテゴリがあれば表示
+<% else %>
+<h1>登録がありません</h1>
+<div class="explanation_text">
+  ★<%= link_to "カテゴリ", new_category_path %>を作成し、ブックマークを登録しましょう
+</div>
+<% end %>
