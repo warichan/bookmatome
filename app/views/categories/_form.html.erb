@@ -1,9 +1,12 @@
-<%= form_tag user_sessions_path, :method => :post do %>
+<%= form_for [@user, @category] do |f| %>
   <div class="field">
     <%= label_tag "カテゴリ名" %><br />
-    <%= text_field_tag :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="explanation_text">
+    ★あとで変更できます。
   </div>
   <div class="actions">
-    <%= submit_tag "登録" %>
+    <%= f.submit "登録" %>
   </div>
 <% end %>

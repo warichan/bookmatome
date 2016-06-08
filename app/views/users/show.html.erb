@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 <div class="category_button">
-  <%= link_to new_category_path, class: 'btn btn-default' do %>
+  <%= link_to new_user_category_path(@user), class: 'btn btn-default' do %>
     カテゴリ新規作成
   <% end %>
 </div>
 <% if @user.categories.any? %>
-#カテゴリがあれば表示
+  #カテゴリがあれば表示
 <% else %>
 <h1>登録がありません</h1>
 <div class="explanation_text">
-  ★<%= link_to "カテゴリ", new_category_path %>を作成し、ブックマークを登録しましょう
+  ★<%= link_to "カテゴリ", new_user_category_path(@user) %>を作成し、ブックマークを登録しましょう
 </div>
 <% end %>
