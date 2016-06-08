@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 <div class="category_button">
-  <%= link_to new_user_category_path(@user), class: 'btn btn-default' do %>
+  <%= link_to new_user_category_path(current_user), class: 'btn btn-default' do %>
     カテゴリ新規作成
   <% end %>
 </div>
-<% if @user.categories.any? %>
+<% if current_user.categories.any? %>
   #カテゴリがあれば表示
 <% else %>
 <h1>登録がありません</h1>
