@@ -1,0 +1,2 @@
+class SiteDatesController < ApplicationController
+end

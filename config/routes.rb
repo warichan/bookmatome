@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :categories
   end
 
+  resources :site_dates
+
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
   get 'sign_up' => 'users#new', :as => :sign_up

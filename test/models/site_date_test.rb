@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class BookmarksControllerTest < ActionController::TestCase
+class SiteDateTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

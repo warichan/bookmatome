@@ -1,0 +1,18 @@
+<h1>ブックマーク登録</h1>
+
+<%= form_for '#' do |f| %>
+  <div class="field">
+    <%= f.label "サイト名" %><br />
+    <%= f.text_field :site_name %>
+  </div>
+
+  <div class="field">
+    <%#　:url, "URL"にしないと Urlと表示されてしまう %>
+    <%= f.label :url, "URL" %><br />
+    <%= f.text_field :url, :placeholder => "http://" %>
+  </div>
+
+  <div class="action">
+    <%= f.submit "登録" %>
+  </div>
+<% end %>
