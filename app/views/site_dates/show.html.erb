@@ -1,0 +1,18 @@
+<h1><%# カテゴリタイトル %></h1>
+
+<table>
+  <tr>
+    <th>サイト名</th>
+    <th>URL</th>
+  </tr>
+
+  <% @site_dates.each do |site_date| %>
+    <tr>
+      <td><%= site_date.site_name %></td>
+      <td><%= site_date.url %></td>
+      <td><%= link_to "変更", '#' %></td>
+      <td><%= link_to "削除", '#',
+                            method: :delete, date: { confirm: "削除しますか？"} %></td>
+    </tr>
+  <% end %>
+</table>
