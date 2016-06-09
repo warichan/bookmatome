@@ -10,7 +10,11 @@ class CategoriesController < ApplicationController
     @user = User.find(params[:user_id])
     @category = @user.categories.create(create_params)
 
-    redirect_to user_path(@user)
+    if @category.save
+      redirect_to user_path(@user)
+    else
+      render 'new'
+    end
   end
 
   def show

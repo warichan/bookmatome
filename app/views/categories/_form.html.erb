@@ -1,4 +1,9 @@
 <%= form_for [@user, @category] do |f| %>
+  <% if @category.errors.any? %>
+      <% @category.errors.full_messages.each do |message| %>
+        <%= message %>
+      <% end %>
+  <% end %>
   <div class="field">
     <%= label_tag "カテゴリ名" %><br />
     <%= f.text_field :title %>
