@@ -1,7 +1,7 @@
 <%= form_for [@user, @category] do |f| %>
   <% if @category.errors.any? %>
       <% @category.errors.full_messages.each do |message| %>
-        <%= message %>
+        <div class= "error"><%= message %></div>
       <% end %>
   <% end %>
   <div class="field">

@@ -29,6 +29,10 @@ body{
   text-align: center;
 }
 
+ul{
+  list-style: none;
+}
+
 .page_about{
   font-size: 16px;
 }
@@ -74,4 +78,8 @@ a:hover {
   border: solid 1px;
   border-radius: 50px;
   margin: 50px;
+}
+
+.error {
+  color: red;
 }
