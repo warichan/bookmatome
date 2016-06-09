@@ -5,8 +5,11 @@
   <% end %>
 </div>
 <% if current_user.categories.any? %>
+  <h1>カテゴリ一覧</h1>
   <% current_user.categories.each do |category| %>
-    <%= category.title %>
+    <div class ="category">
+      <%= category.title %>
+    </div>
   <% end %>
 <% else %>
   <h1>登録がありません</h1>
