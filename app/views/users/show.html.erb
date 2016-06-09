@@ -8,12 +8,12 @@
   <h1>カテゴリ一覧</h1>
   <% current_user.categories.each do |category| %>
     <div class ="category">
-      <%= category.title %>
+      <h2><%= link_to category.title, '#' %></h2>
     </div>
   <% end %>
 <% else %>
   <h1>登録がありません</h1>
   <div class="explanation_text">
-    ★<%= link_to "カテゴリ", new_user_category_path(@user) %>を作成し、ブックマークを登録しましょう
+    ★<%= link_to "カテゴリ", new_user_category_path(current_user) %>を作成し、ブックマークを登録しましょう
   </div>
 <% end %>
