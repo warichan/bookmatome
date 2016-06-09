@@ -5,10 +5,12 @@
   <% end %>
 </div>
 <% if current_user.categories.any? %>
-  #カテゴリがあれば表示
+  <% current_user.categories.each do |category| %>
+    <%= category.title %>
+  <% end %>
 <% else %>
-<h1>登録がありません</h1>
-<div class="explanation_text">
-  ★<%= link_to "カテゴリ", new_user_category_path(@user) %>を作成し、ブックマークを登録しましょう
-</div>
+  <h1>登録がありません</h1>
+  <div class="explanation_text">
+    ★<%= link_to "カテゴリ", new_user_category_path(@user) %>を作成し、ブックマークを登録しましょう
+  </div>
 <% end %>
