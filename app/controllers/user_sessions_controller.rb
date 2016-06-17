@@ -7,15 +7,17 @@ class UserSessionsController < ApplicationController
 
   def create
     if @user = login(params[:email], params[:password])
-      redirect_back_or_to(user_path(@user), notice: 'ログインしました！')
+      flash[:success] = "ログインしました！"
+      redirect_back_or_to user_path(@user)
     else
-      flash.now[:alert] = '※メールアドレスもしくはパスワードが違います'
+      flash[:danger] = 'メールアドレスもしくはパスワードが違います'
       render action: 'new'
   end
 end
 
   def destroy
     logout
+    flash[:success] = "ログアウトしました！"
     redirect_to root_path
   end
 end

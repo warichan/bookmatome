@@ -1,5 +1,7 @@
-<p id="notice"><%= notice %></p>
-<div class="category_button">
+<% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
+  <div class="category_button">
   <%= link_to new_user_category_path(current_user), class: 'btn btn-default' do %>
     カテゴリ新規作成
   <% end %>
