@@ -1,7 +1,9 @@
 <h1>ログイン</h1>
 
 <p>
-  <%= flash[:alert] %>
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>
 </p>
 
 <%= render 'form' %>
