@@ -11,6 +11,12 @@
   <% current_user.categories.each do |category| %>
     <div class ="category">
       <h2><%= link_to category.title, user_category_path(current_user,category.id) %></h2>
+      <%= link_to edit_user_category_path(current_user,category.id), class: 'btn btn-info' do %>
+        変更
+      <% end %>
+      <%= link_to user_category_path(current_user,category.id), method: :delete, data: { confirm: "カテゴリを削除しますか？" }, class: 'btn btn-danger' do %>
+        変更
+      <% end %>
     </div>
   <% end %>
 <% else %>

@@ -21,6 +21,12 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
   end
 
+  def destroy
+    @user = User.find(params[:user_id])
+    Category.find(params[:id]).destroy
+    redirect_to user_path(@user)
+  end
+
   private
 
   def create_params
